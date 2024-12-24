@@ -102,17 +102,7 @@ header .top-bar .container .select-language {
     top: 20%;
   }
 }
-@keyframes select-up {
-  0% {
-    z-index: 998;
-    top: 20%;
-  }
-  100% {
-    z-index: 998;
-    top: 10%;
-    display: none;
-  }
-}
+
 header .top-bar .container .select-currency h2,
 header .top-bar .container .select-language h2 {
   padding: 10px 20px 15px;
@@ -181,7 +171,7 @@ header .top-bar .container .select-currency {
   background: #fff;
   border: 1px solid #333;
   border-radius: 20px;
-  animation: select-down forwards 1s linear;
+  animation: select-down forwards 0.4s linear;
 }
 header .top-bar .container .select-currency .coins {
   padding: 10px 20px;
@@ -267,7 +257,8 @@ header .top-bar .container .select-currency .coins span strong {
   header .bottom-bar ul.links  li {
     text-transform: capitalize;
     font-weight: bold;
-    transition: color 0.3s;font-size: 1.1em;
+    transition: color 0.3s;
+    font-size: 0.9em;
     transition: all 0.3s;
     position: relative;
     transition: all 0.3s;
@@ -276,32 +267,36 @@ header .top-bar .container .select-currency .coins span strong {
   
   header .bottom-bar ul.links  li ul {
     position: absolute;
-    top: 110%;
+    top: 108%;
     left: 0%;
+    padding: 0px;
+    margin-right: 10px;
     background: #fff;
     line-height: 2;
-    width: 150px;
+    width: 0;
     height: 0px;
-    padding: 0;
     border-radius: 0px 0px 12px 12px;
     transition: all 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+
 }
   header .bottom-bar ul.links  li:hover ul {
     display: block;
     animation: show 0.3s linear 1 forwards;
-
 }
 @keyframes show {
   0%{
     height: 0;
-
+width: 0;
+padding: 0;
   }
   100%{
     height: auto;
+    width: max-content;
+    padding: 10px ;
     overflow:  inherit;
 
   }
@@ -338,7 +333,8 @@ header .bottom-bar ul.links  li ul li {
   header .bottom-bar .pages-links ul.my-account-links li {}
   header .bottom-bar .pages-links ul.my-account-links li a {}
   header .bottom-bar .pages-links .booking-other-pages-links {
-    display: none;
+    /* display: none; */
+    display: flex;
   }
   header .bottom-bar .pages-links .booking-other-pages-links ul.booking-links {}
   header .bottom-bar .pages-links .booking-other-pages-links ul.booking-links li {}

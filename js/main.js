@@ -33,19 +33,51 @@ usd.addEventListener("click", (e) => {
 });
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("check-lang")) {
-      selectLanguage.style.animation = ani_select_down;
-} else {
-    selectLanguage.cssText = `background:red`
-    selectLanguage.style.animation = ani_select_up;
-}
-if (e.target.classList.contains("check-usd")) {
+    selectLanguage.style.animation = ani_select_down;
+    selectLanguage.style.display = "block";
+  } else {
+    selectLanguage.cssText = `background:red`;
+    selectLanguage.style.display = "none";
+  }
+  if (e.target.classList.contains("check-usd")) {
     selectCurrency.style.animation = ani_select_down;
-} else {
-    selectCurrency.style.animation = ani_select_up;
+  } else {
+    selectCurrency.style.display = "none";
   }
 });
 
 // ============= End Top Bar =============
+
+// ============= Start Bottom Bar =============
+
+let B_links_lis = document.querySelectorAll("header .bottom-bar ul.links li");
+let B_links_uls_dropdown = document.querySelectorAll(
+  "header .bottom-bar ul.links li ul"
+);
+
+B_links_lis.forEach((li) => {
+  li.addEventListener("mouseenter", (e) => {
+    // e.target.children[1].classList.contains("links-home")
+  //   console.log(e.target.children[1])
+  // li.children[1].style.background  = 'red'
+   
+  
+//  if (
+//       e.target.children[1].classList.contains("links-home") == true &&
+//       e.target.children[1].tagName == "UL"
+//     ) {
+      
+//       e.target.children[1].style.animation = "show 0.3s linear 1 forwards";
+//       e.target.children[1].onmouseleave = (e) => {
+//         e.target.children[1].style.animation = "0";
+      
+        
+//       }
+//     }
+  });
+});
+
+// ============= End Bottom Bar =============
 
 /* 
 ================
